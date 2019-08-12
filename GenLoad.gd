@@ -1,6 +1,10 @@
 extends Node
 
-# https://docs.godotengine.org/en/3.1/tutorials/io/background_loading.html
+# https://docs.godotengine.org/en/3.1/tutorials/io/background_loading.html Loading Thread, resource_queue.gd
+# https://godotengine.org/qa/8025/how-to-add-a-child-in-a-specific-position Spawn new child into a node out of instanced resource
+# https://www.youtube.com/watch?v=YMj2qPq9CP8 How to make Loading Bar in Unity
+# https://www.youtube.com/watch?v=9sHKaQBcgO8 (Unhelpful, No loading bar) Splash Screen Loadinger without bar
+# https://www.youtube.com/watch?v=-x0M17IwG0s (Unhelpful, crude box spawn method) Load some boxes into a scene
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -40,6 +44,7 @@ func _process(delta):
 
 func ShowLevel():
 	#LoadSet = queue.get_resource("res://manies.tscn").instance()
+	# https://godotengine.org/qa/8025/how-to-add-a-child-in-a-specific-position
 	$Spatial.add_child(LoadSet)
 	pass
 
