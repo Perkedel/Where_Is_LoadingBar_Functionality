@@ -35,3 +35,120 @@ anchor_bottom = 1.0
 [node name="ProgressBar" type="ProgressBar" parent="Control"]
 margin_right = 1024.0
 margin_bottom = 80.0
+
+[node name="Label" type="Label" parent="Control"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_top = 80.0
+margin_right = 560.0
+margin_bottom = 350.0
+text = "Step:
+1. Press UI Up / 1. QUEUE RESOURCE. Queue Resource and Start Loading The Node. Wait 100% loading bar.
+2. Press UI Left / 2. INSTANCE RESOURCE. Instance the Resource out of the Queue. Loading bar goes 0 again.
+3. Press UI Enter / 3. SPAWN RESOURCE. Spawn the instance into this 3D Space Node.
+
+Respawning more:
+1. Press UI Left / 2. INSTANCE RESOURCE. Instance the Resource again.
+2. Press UI Enter / 3. SPAWN RESOURCE. Spawn that instance again.
+
+Cancel:
+1. Press UI Down / X. CANCEL RESOURCE. Cancel the queue Resource. 
+Probably has to be done before loading completes.
+If completed, it will be Press UI Left instanceable instead, cannot cancel."
+autowrap = true
+clip_text = true
+
+[node name="Panel" type="Panel" parent="Control"]
+self_modulate = Color( 1, 1, 1, 0.294118 )
+show_behind_parent = true
+margin_left = 560.0
+margin_top = 80.0
+margin_right = 1024.0
+margin_bottom = 350.0
+
+[node name="LoadSetCheck" type="CheckBox" parent="Control/Panel"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 155.0
+margin_bottom = 34.0
+focus_mode = 0
+button_mask = 0
+enabled_focus_mode = 0
+text = "LoadSet Instanced"
+
+[node name="ReadyToShowCheck" type="CheckBox" parent="Control/Panel"]
+margin_left = 10.0
+margin_top = 40.0
+margin_right = 155.0
+margin_bottom = 64.0
+focus_mode = 0
+button_mask = 0
+enabled_focus_mode = 0
+text = "Ready To Show"
+
+[node name="CenterContainer" type="CenterContainer" parent="Control"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -140.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/CenterContainer"]
+margin_left = 208.0
+margin_top = 20.0
+margin_right = 816.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 500, 100 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ButtonA" type="Button" parent="Control/CenterContainer/HBoxContainer"]
+margin_right = 143.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "1. QUEUE RESOURCE"
+
+[node name="ButtonB" type="Button" parent="Control/CenterContainer/HBoxContainer"]
+margin_left = 147.0
+margin_right = 308.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "2. INSTANCE RESOURCE"
+
+[node name="ButtonC" type="Button" parent="Control/CenterContainer/HBoxContainer"]
+margin_left = 312.0
+margin_right = 457.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "3. SPAWN RESOURCE"
+
+[node name="ButtonD" type="Button" parent="Control/CenterContainer/HBoxContainer"]
+self_modulate = Color( 1, 0, 0, 1 )
+margin_left = 461.0
+margin_right = 608.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "X. CANCEL RESOURCE"
+
+[node name="QuitConfirmationDialog" type="ConfirmationDialog" parent="Control"]
+margin_left = 300.0
+margin_top = 218.0
+margin_right = 722.0
+margin_bottom = 388.0
+dialog_text = "Are You sure to quit?"
+
+[node name="QUITButton" type="Button" parent="Control"]
+self_modulate = Color( 1, 0, 0, 1 )
+margin_left = 20.0
+margin_top = 520.0
+margin_right = 130.0
+margin_bottom = 580.0
+text = "QUIT"
+[connection signal="pressed" from="Control/CenterContainer/HBoxContainer/ButtonA" to="." method="_on_ButtonA_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/HBoxContainer/ButtonB" to="." method="_on_ButtonB_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/HBoxContainer/ButtonC" to="." method="_on_ButtonC_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/HBoxContainer/ButtonD" to="." method="_on_ButtonD_pressed"]
+[connection signal="confirmed" from="Control/QuitConfirmationDialog" to="." method="_on_ConfirmationDialog_confirmed"]
+[connection signal="pressed" from="Control/QUITButton" to="." method="_on_QUITButton_pressed"]
