@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="PrismMesh" id=1]
+subdivide_width = 1000
+subdivide_height = 100
+subdivide_depth = 10
+
+[sub_resource type="SphereShape" id=2]
+radius = 1.87301
+
+[node name="WhyDoesntLagYet" type="RigidBody"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 2 )
