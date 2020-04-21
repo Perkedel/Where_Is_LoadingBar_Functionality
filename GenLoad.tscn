@@ -28,6 +28,8 @@ shape = SubResource( 2 )
 
 [node name="qub" parent="Spatial" instance=ExtResource( 2 )]
 
+[node name="Spawns" type="Spatial" parent="Spatial"]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Control" type="Control" parent="CanvasLayer"]
@@ -55,7 +57,7 @@ __meta__ = {
 [node name="StepContains" type="HBoxContainer" parent="CanvasLayer/Control/VBoxContainer"]
 margin_top = 84.0
 margin_right = 1920.0
-margin_bottom = 912.0
+margin_bottom = 899.0
 rect_min_size = Vector2( 0, 270 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -63,20 +65,20 @@ size_flags_vertical = 3
 [node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer/StepContains"]
 self_modulate = Color( 0, 0, 0, 1 )
 margin_right = 958.0
-margin_bottom = 828.0
+margin_bottom = 815.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Step:
-1. Press UI Up / 1. QUEUE RESOURCE. Queue Resource and Start Loading The Node. Wait 100% loading bar.
-2. Press UI Left / 2. INSTANCE RESOURCE. Instance the Resource out of the Queue. Loading bar goes 0 again.
-3. Press UI Enter / 3. SPAWN RESOURCE. Spawn the instance into this 3D Space Node.
+1. Press 1. QUEUE RESOURCE. Queue Resource and Start Loading The Node. Wait 100% loading bar.
+2. Press 2. INSTANCE RESOURCE. Instance the Resource out of the Queue. Loading bar goes 0 again.
+3. Press 3. SPAWN RESOURCE. Spawn the instance into this 3D Space Node.
 
 Respawning more:
-1. Press UI Left / 2. INSTANCE RESOURCE. Instance the Resource again.
-2. Press UI Enter / 3. SPAWN RESOURCE. Spawn that instance again.
+1. Press 2. INSTANCE RESOURCE. Instance the Resource again.
+2. Press 3. SPAWN RESOURCE. Spawn that instance again.
 
 Cancel:
-1. Press UI Down / X. CANCEL RESOURCE. Cancel the queue Resource. 
+1. Press X. CANCEL RESOURCE. Cancel the queue Resource. 
 Probably has to be done before loading completes.
 If completed, it will be Press UI Left instanceable instead, cannot cancel."
 autowrap = true
@@ -90,7 +92,7 @@ self_modulate = Color( 1, 1, 1, 0.294118 )
 show_behind_parent = true
 margin_left = 962.0
 margin_right = 1920.0
-margin_bottom = 828.0
+margin_bottom = 815.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -118,15 +120,15 @@ enabled_focus_mode = 0
 text = "Ready To Show"
 
 [node name="Empty" type="HBoxContainer" parent="CanvasLayer/Control/VBoxContainer"]
-margin_top = 916.0
+margin_top = 903.0
 margin_right = 1920.0
 margin_bottom = 936.0
 size_flags_horizontal = 3
 
 [node name="QUITButton" type="Button" parent="CanvasLayer/Control/VBoxContainer/Empty"]
 self_modulate = Color( 1, 0, 0, 1 )
-margin_right = 45.0
-margin_bottom = 20.0
+margin_right = 69.0
+margin_bottom = 33.0
 text = "QUIT"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -142,32 +144,32 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/VBoxContainer/CenterContainer"]
-margin_left = 656.0
+margin_left = 341.0
 margin_top = 20.0
-margin_right = 1264.0
+margin_right = 1579.0
 margin_bottom = 120.0
 rect_min_size = Vector2( 500, 100 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="ButtonA" type="Button" parent="CanvasLayer/Control/VBoxContainer/CenterContainer/HBoxContainer"]
-margin_right = 143.0
+margin_right = 237.0
 margin_bottom = 100.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "1. QUEUE RESOURCE"
 
 [node name="ButtonB" type="Button" parent="CanvasLayer/Control/VBoxContainer/CenterContainer/HBoxContainer"]
-margin_left = 147.0
-margin_right = 308.0
+margin_left = 241.0
+margin_right = 513.0
 margin_bottom = 100.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "2. INSTANCE RESOURCE"
 
 [node name="ButtonC" type="Button" parent="CanvasLayer/Control/VBoxContainer/CenterContainer/HBoxContainer"]
-margin_left = 312.0
-margin_right = 457.0
+margin_left = 517.0
+margin_right = 757.0
 margin_bottom = 100.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -175,12 +177,21 @@ text = "3. SPAWN RESOURCE"
 
 [node name="ButtonD" type="Button" parent="CanvasLayer/Control/VBoxContainer/CenterContainer/HBoxContainer"]
 self_modulate = Color( 1, 0, 0, 1 )
-margin_left = 461.0
-margin_right = 608.0
+margin_left = 761.0
+margin_right = 1006.0
 margin_bottom = 100.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "X. CANCEL RESOURCE"
+
+[node name="ButtonD2" type="Button" parent="CanvasLayer/Control/VBoxContainer/CenterContainer/HBoxContainer"]
+self_modulate = Color( 1, 0, 0, 1 )
+margin_left = 1010.0
+margin_right = 1238.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "/!\\. DELETE SPAWNS"
 
 [node name="QuitConfirmationDialog" type="ConfirmationDialog" parent="CanvasLayer/Control"]
 margin_left = 300.0
@@ -194,4 +205,5 @@ dialog_text = "Are You sure to quit?"
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/CenterContainer/HBoxContainer/ButtonB" to="." method="_on_ButtonB_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/CenterContainer/HBoxContainer/ButtonC" to="." method="_on_ButtonC_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/CenterContainer/HBoxContainer/ButtonD" to="." method="_on_ButtonD_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/CenterContainer/HBoxContainer/ButtonD2" to="." method="_on_ButtonD2_pressed"]
 [connection signal="confirmed" from="CanvasLayer/Control/QuitConfirmationDialog" to="." method="_on_ConfirmationDialog_confirmed"]

@@ -63,27 +63,27 @@ func _process(delta):
 func ShowLevel():
 	#LoadSet = queue.get_resource("res://manies.tscn").instance()
 	# https://godotengine.org/qa/8025/how-to-add-a-child-in-a-specific-position
-	$Spatial.add_child(LoadSet)
+	$Spatial/Spawns.add_child(LoadSet)
 	pass
 
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
-		SpawnResource()
+		#SpawnResource()
 #		if ReadyToShow:
 #			call_deferred("ShowLevel")
 #			pass
 		pass
 	
 	if event.is_action_pressed("ui_down"):
-		CancelResource()
+		#CancelResource()
 		pass
 	
 	if event.is_action_pressed("ui_up"):
-		QueueResource()
+		#QueueResource()
 		pass
 	
 	if event.is_action_pressed("ui_left"):
-		InstanceResource()
+		#InstanceResource()
 		pass
 	pass
 
@@ -98,6 +98,11 @@ func SpawnResource():
 	pass
 func CancelResource():
 	queue.cancel_resource("res://manies.tscn")
+	pass
+func DeleteSpawns():
+	for things in $Spatial/Spawns.get_children():
+		things.free()
+		pass
 	pass
 
 
@@ -132,4 +137,9 @@ func _on_ConfirmationDialog_confirmed():
 
 func _on_QUITButton_pressed():
 	$CanvasLayer/Control/QuitConfirmationDialog.popup()
+	pass # Replace with function body.
+
+
+func _on_ButtonD2_pressed():
+	DeleteSpawns()
 	pass # Replace with function body.
