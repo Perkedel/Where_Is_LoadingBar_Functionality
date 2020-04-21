@@ -40,6 +40,7 @@ common/physics_fps=120
 
 [rendering]
 
+quality/driver/driver_name="GLES2"
 quality/driver/fallback_to_gles2=true
 threads/thread_model=2
 vram_compression/import_bptc=true
