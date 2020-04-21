@@ -44,17 +44,17 @@ func _process(delta):
 		pass
 	
 	if ReadyToShow:
-		$CanvasLayer/Control/VBoxContainer/StepContains/Panel/ReadyToShowCheck.pressed = true
+		$CanvasLayer/Control/VBoxContainer/StepContains/Panel/VBoxContainer/ReadyToShowCheck.pressed = true
 		pass
 	else:
-		$CanvasLayer/Control/VBoxContainer/StepContains/Panel/ReadyToShowCheck.pressed = false
+		$CanvasLayer/Control/VBoxContainer/StepContains/Panel/VBoxContainer/ReadyToShowCheck.pressed = false
 		pass
 	
 	if LoadSet:
-		$CanvasLayer/Control/VBoxContainer/StepContains/Panel/LoadSetCheck.pressed = true
+		$CanvasLayer/Control/VBoxContainer/StepContains/Panel/VBoxContainer/LoadSetCheck.pressed = true
 		pass
 	else:
-		$CanvasLayer/Control/VBoxContainer/StepContains/Panel/LoadSetCheck.pressed = false
+		$CanvasLayer/Control/VBoxContainer/StepContains/Panel/VBoxContainer/LoadSetCheck.pressed = false
 		pass
 	
 	$CanvasLayer/Control/VBoxContainer/ProgressBar.value = LoadingValue

@@ -57,3 +57,12 @@ jobs:
       - run:
           name: Upload win64 build
           command: if [[ $(git log -1 --oneline) == *"[RELEASE]"* ]]; then ./butler push win64 joelwindows7/loading-bar-functionality:win-64bit-circleci; fi
+      
+      - run:
+          name: Export HTML5 build
+          command: |
+              mkdir -p HTML5
+              ./godot --export HTML5 project.godot "HTML5/loading-bar_Circle-CI.exe"
+      - run:
+          name: Upload HTML5 build
+          command: if [[ $(git log -1 --oneline) == *"[RELEASE]"* ]]; then ./butler push HTML5 joelwindows7/loading-bar-functionality:HTML5-circleci; fi

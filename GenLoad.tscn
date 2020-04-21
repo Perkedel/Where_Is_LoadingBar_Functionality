@@ -96,11 +96,16 @@ margin_bottom = 815.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="LoadSetCheck" type="CheckBox" parent="CanvasLayer/Control/VBoxContainer/StepContains/Panel"]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 155.0
-margin_bottom = 34.0
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/VBoxContainer/StepContains/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoadSetCheck" type="CheckBox" parent="CanvasLayer/Control/VBoxContainer/StepContains/Panel/VBoxContainer"]
+margin_right = 958.0
+margin_bottom = 33.0
 focus_mode = 0
 button_mask = 0
 enabled_focus_mode = 0
@@ -109,11 +114,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ReadyToShowCheck" type="CheckBox" parent="CanvasLayer/Control/VBoxContainer/StepContains/Panel"]
-margin_left = 10.0
-margin_top = 40.0
-margin_right = 155.0
-margin_bottom = 64.0
+[node name="ReadyToShowCheck" type="CheckBox" parent="CanvasLayer/Control/VBoxContainer/StepContains/Panel/VBoxContainer"]
+margin_top = 37.0
+margin_right = 958.0
+margin_bottom = 70.0
 focus_mode = 0
 button_mask = 0
 enabled_focus_mode = 0
@@ -194,10 +198,15 @@ size_flags_vertical = 3
 text = "/!\\. DELETE SPAWNS"
 
 [node name="QuitConfirmationDialog" type="ConfirmationDialog" parent="CanvasLayer/Control"]
-margin_left = 300.0
-margin_top = 218.0
-margin_right = 722.0
-margin_bottom = 388.0
+visible = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -504.0
+margin_top = -203.0
+margin_right = 505.0
+margin_bottom = 203.0
 window_title = "Mohon konfirmasi..."
 dialog_text = "Are You sure to quit?"
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Empty/QUITButton" to="." method="_on_QUITButton_pressed"]
