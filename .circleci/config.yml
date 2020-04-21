@@ -5,7 +5,6 @@ jobs:
     machine:
         enabled: true
     steps:
-      - welcome/run
       - checkout
       - run:
           name: Install dependencies
