@@ -16,7 +16,7 @@ onready var queue = preload("res://Scripts/resource_queue.gd").new()
 var LoadSet
 export var LoadingValue = 0 
 export var ReadyToShow = false
-
+export(String) var loadThisNamePls = "res://Fews.tscn"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	queue.start()
@@ -32,14 +32,14 @@ func _ready():
 func _process(delta):
 	if queue.is_ready("res://manies.tscn"):
 		ReadyToShow = true
-		LoadingValue = queue.get_progress("res://manies.tscn") * 100
+		LoadingValue = queue.get_progress(loadThisNamePls) * 100
 		# It will no longer ready when the resource gets instanced!
 		#LoadSet = queue.get_resource("res://manies.tscn").instance()
 		#print("ready")
 		pass
 	else:
 		ReadyToShow = false
-		LoadingValue = queue.get_progress("res://manies.tscn") * 100
+		LoadingValue = queue.get_progress(loadThisNamePls) * 100
 		#print("Unready")
 		pass
 	
@@ -88,16 +88,16 @@ func _input(event):
 	pass
 
 func QueueResource():
-	queue.queue_resource("res://manies.tscn",true)
+	queue.queue_resource(loadThisNamePls,true)
 	pass
 func InstanceResource():
-	LoadSet = queue.get_resource("res://manies.tscn").instance()
+	LoadSet = queue.get_resource(loadThisNamePls).instance()
 	pass
 func SpawnResource():
 	call_deferred("ShowLevel")
 	pass
 func CancelResource():
-	queue.cancel_resource("res://manies.tscn")
+	queue.cancel_resource(loadThisNamePls)
 	pass
 func DeleteSpawns():
 	for things in $Spatial/Spawns.get_children():
