@@ -10,6 +10,7 @@ extends Node
 # https://godotengine.org/qa/30565/a-loading-bar-demo
 
 # GLES2 if you wish it compatible for HTML5 unfortunately.
+# enable ETC VRAM compression in Project setting, rendering, vram comrpession.
 
 # Declare member variables here. Examples:
 # var a = 2
