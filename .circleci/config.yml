@@ -47,7 +47,7 @@ jobs:
               mv loading-bar-mac_Circle-CI loading-bar-mac_Circle-CI.zip
       - run:
           name: Upload mac build
-          command: if [[ $(git log -1 --oneline) == *"[RELEASE]"* ]]; then ./butler push clean-escape-mac.zip joelwindows7/loading-bar-functionality:mac-circleci; fi
+          command: if [[ $(git log -1 --oneline) == *"[RELEASE]"* ]]; then ./butler push loading-bar-mac.zip joelwindows7/loading-bar-functionality:mac-circleci; fi
           
       - run:
           name: Export win64 build
