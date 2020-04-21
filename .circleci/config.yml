@@ -44,7 +44,7 @@ jobs:
           name: Export mac build
           command: |
               ./godot --export macOS project.godot "loading-bar-mac_Circle-CI"
-              mv hexagon-engine-mac hexagon-engine-mac.zip
+              mv loading-bar-mac_Circle-CI loading-bar-mac_Circle-CI.zip
       - run:
           name: Upload mac build
           command: if [[ $(git log -1 --oneline) == *"[RELEASE]"* ]]; then ./butler push clean-escape-mac.zip joelwindows7/loading-bar-functionality:mac-circleci; fi
