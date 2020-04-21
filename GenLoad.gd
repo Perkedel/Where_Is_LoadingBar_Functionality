@@ -131,6 +131,7 @@ func _notification(what):
 	
 
 func _on_ConfirmationDialog_confirmed():
+	get_tree().free()
 	get_tree().quit()
 	pass # Replace with function body.
 
