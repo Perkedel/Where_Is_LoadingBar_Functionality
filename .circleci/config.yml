@@ -32,14 +32,6 @@ jobs:
               unzip butler.zip
               chmod +x butler
       - run:
-          name: Export win64 build
-          command: |
-              mkdir -p win64
-              ./godot --export win64 project.godot "win64/loading-bar_Circle-CI.exe"
-      - run:
-          name: Upload win64 build
-          command: if [[ $(git log -1 --oneline) == *"[RELEASE]"* ]]; then ./butler push win64 joelwindows7/loading-bar-functionality:win-64bit-circleci; fi
-      - run:
           name: Export linux64 build
           command: |
               mkdir -p linux64
@@ -47,7 +39,7 @@ jobs:
       - run:
           name: Upload linux64 build
           command: if [[ $(git log -1 --oneline) == *"[RELEASE]"* ]]; then ./butler push linux64 joelwindows7/loading-bar-functionality:linux-64bit-circleci; fi
-
+      
       - run:
           name: Export mac build
           command: |
@@ -56,3 +48,12 @@ jobs:
       - run:
           name: Upload mac build
           command: if [[ $(git log -1 --oneline) == *"[RELEASE]"* ]]; then ./butler push clean-escape-mac.zip joelwindows7/loading-bar-functionality:mac-circleci; fi
+          
+      - run:
+          name: Export win64 build
+          command: |
+              mkdir -p win64
+              ./godot --export win64 project.godot "win64/loading-bar_Circle-CI.exe"
+      - run:
+          name: Upload win64 build
+          command: if [[ $(git log -1 --oneline) == *"[RELEASE]"* ]]; then ./butler push win64 joelwindows7/loading-bar-functionality:win-64bit-circleci; fi
