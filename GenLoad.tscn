@@ -28,19 +28,44 @@ shape = SubResource( 2 )
 
 [node name="qub" parent="Spatial" instance=ExtResource( 2 )]
 
-[node name="Control" type="Control" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="ProgressBar" type="ProgressBar" parent="Control"]
-margin_right = 1024.0
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Control/VBoxContainer"]
+margin_right = 1920.0
 margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Label" type="Label" parent="Control"]
+[node name="StepContains" type="HBoxContainer" parent="CanvasLayer/Control/VBoxContainer"]
+margin_top = 84.0
+margin_right = 1920.0
+margin_bottom = 912.0
+rect_min_size = Vector2( 0, 270 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer/StepContains"]
 self_modulate = Color( 0, 0, 0, 1 )
-margin_top = 80.0
-margin_right = 560.0
-margin_bottom = 350.0
+margin_right = 958.0
+margin_bottom = 828.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 text = "Step:
 1. Press UI Up / 1. QUEUE RESOURCE. Queue Resource and Start Loading The Node. Wait 100% loading bar.
 2. Press UI Left / 2. INSTANCE RESOURCE. Instance the Resource out of the Queue. Loading bar goes 0 again.
@@ -56,16 +81,20 @@ Probably has to be done before loading completes.
 If completed, it will be Press UI Left instanceable instead, cannot cancel."
 autowrap = true
 clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Panel" type="Panel" parent="Control"]
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/VBoxContainer/StepContains"]
 self_modulate = Color( 1, 1, 1, 0.294118 )
 show_behind_parent = true
-margin_left = 560.0
-margin_top = 80.0
-margin_right = 1024.0
-margin_bottom = 350.0
+margin_left = 962.0
+margin_right = 1920.0
+margin_bottom = 828.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="LoadSetCheck" type="CheckBox" parent="Control/Panel"]
+[node name="LoadSetCheck" type="CheckBox" parent="CanvasLayer/Control/VBoxContainer/StepContains/Panel"]
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 155.0
@@ -74,8 +103,11 @@ focus_mode = 0
 button_mask = 0
 enabled_focus_mode = 0
 text = "LoadSet Instanced"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="ReadyToShowCheck" type="CheckBox" parent="Control/Panel"]
+[node name="ReadyToShowCheck" type="CheckBox" parent="CanvasLayer/Control/VBoxContainer/StepContains/Panel"]
 margin_left = 10.0
 margin_top = 40.0
 margin_right = 155.0
@@ -85,29 +117,47 @@ button_mask = 0
 enabled_focus_mode = 0
 text = "Ready To Show"
 
-[node name="CenterContainer" type="CenterContainer" parent="Control"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -140.0
+[node name="Empty" type="HBoxContainer" parent="CanvasLayer/Control/VBoxContainer"]
+margin_top = 916.0
+margin_right = 1920.0
+margin_bottom = 936.0
+size_flags_horizontal = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/CenterContainer"]
-margin_left = 208.0
+[node name="QUITButton" type="Button" parent="CanvasLayer/Control/VBoxContainer/Empty"]
+self_modulate = Color( 1, 0, 0, 1 )
+margin_right = 45.0
+margin_bottom = 20.0
+text = "QUIT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Control/VBoxContainer"]
+margin_top = 940.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+rect_min_size = Vector2( 0, 140 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/VBoxContainer/CenterContainer"]
+margin_left = 656.0
 margin_top = 20.0
-margin_right = 816.0
+margin_right = 1264.0
 margin_bottom = 120.0
 rect_min_size = Vector2( 500, 100 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="ButtonA" type="Button" parent="Control/CenterContainer/HBoxContainer"]
+[node name="ButtonA" type="Button" parent="CanvasLayer/Control/VBoxContainer/CenterContainer/HBoxContainer"]
 margin_right = 143.0
 margin_bottom = 100.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "1. QUEUE RESOURCE"
 
-[node name="ButtonB" type="Button" parent="Control/CenterContainer/HBoxContainer"]
+[node name="ButtonB" type="Button" parent="CanvasLayer/Control/VBoxContainer/CenterContainer/HBoxContainer"]
 margin_left = 147.0
 margin_right = 308.0
 margin_bottom = 100.0
@@ -115,7 +165,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "2. INSTANCE RESOURCE"
 
-[node name="ButtonC" type="Button" parent="Control/CenterContainer/HBoxContainer"]
+[node name="ButtonC" type="Button" parent="CanvasLayer/Control/VBoxContainer/CenterContainer/HBoxContainer"]
 margin_left = 312.0
 margin_right = 457.0
 margin_bottom = 100.0
@@ -123,7 +173,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "3. SPAWN RESOURCE"
 
-[node name="ButtonD" type="Button" parent="Control/CenterContainer/HBoxContainer"]
+[node name="ButtonD" type="Button" parent="CanvasLayer/Control/VBoxContainer/CenterContainer/HBoxContainer"]
 self_modulate = Color( 1, 0, 0, 1 )
 margin_left = 461.0
 margin_right = 608.0
@@ -132,23 +182,16 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "X. CANCEL RESOURCE"
 
-[node name="QuitConfirmationDialog" type="ConfirmationDialog" parent="Control"]
+[node name="QuitConfirmationDialog" type="ConfirmationDialog" parent="CanvasLayer/Control"]
 margin_left = 300.0
 margin_top = 218.0
 margin_right = 722.0
 margin_bottom = 388.0
+window_title = "Mohon konfirmasi..."
 dialog_text = "Are You sure to quit?"
-
-[node name="QUITButton" type="Button" parent="Control"]
-self_modulate = Color( 1, 0, 0, 1 )
-margin_left = 20.0
-margin_top = 520.0
-margin_right = 130.0
-margin_bottom = 580.0
-text = "QUIT"
-[connection signal="pressed" from="Control/CenterContainer/HBoxContainer/ButtonA" to="." method="_on_ButtonA_pressed"]
-[connection signal="pressed" from="Control/CenterContainer/HBoxContainer/ButtonB" to="." method="_on_ButtonB_pressed"]
-[connection signal="pressed" from="Control/CenterContainer/HBoxContainer/ButtonC" to="." method="_on_ButtonC_pressed"]
-[connection signal="pressed" from="Control/CenterContainer/HBoxContainer/ButtonD" to="." method="_on_ButtonD_pressed"]
-[connection signal="confirmed" from="Control/QuitConfirmationDialog" to="." method="_on_ConfirmationDialog_confirmed"]
-[connection signal="pressed" from="Control/QUITButton" to="." method="_on_QUITButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Empty/QUITButton" to="." method="_on_QUITButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/CenterContainer/HBoxContainer/ButtonA" to="." method="_on_ButtonA_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/CenterContainer/HBoxContainer/ButtonB" to="." method="_on_ButtonB_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/CenterContainer/HBoxContainer/ButtonC" to="." method="_on_ButtonC_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/CenterContainer/HBoxContainer/ButtonD" to="." method="_on_ButtonD_pressed"]
+[connection signal="confirmed" from="CanvasLayer/Control/QuitConfirmationDialog" to="." method="_on_ConfirmationDialog_confirmed"]

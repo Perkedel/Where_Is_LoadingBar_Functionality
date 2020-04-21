@@ -6,6 +6,9 @@ extends Node
 # https://www.youtube.com/watch?v=9sHKaQBcgO8 (Unhelpful, No loading bar) Splash Screen Loadinger without bar
 # https://www.youtube.com/watch?v=-x0M17IwG0s (Unhelpful, crude box spawn method) Load some boxes into a scene
 
+# https://godotengine.org/qa/41325/how-to-create-a-loading-screen
+# https://godotengine.org/qa/30565/a-loading-bar-demo
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -41,20 +44,20 @@ func _process(delta):
 		pass
 	
 	if ReadyToShow:
-		$Control/Panel/ReadyToShowCheck.pressed = true
+		$CanvasLayer/Control/VBoxContainer/StepContains/Panel/ReadyToShowCheck.pressed = true
 		pass
 	else:
-		$Control/Panel/ReadyToShowCheck.pressed = false
+		$CanvasLayer/Control/VBoxContainer/StepContains/Panel/ReadyToShowCheck.pressed = false
 		pass
 	
 	if LoadSet:
-		$Control/Panel/LoadSetCheck.pressed = true
+		$CanvasLayer/Control/VBoxContainer/StepContains/Panel/LoadSetCheck.pressed = true
 		pass
 	else:
-		$Control/Panel/LoadSetCheck.pressed = false
+		$CanvasLayer/Control/VBoxContainer/StepContains/Panel/LoadSetCheck.pressed = false
 		pass
 	
-	$Control/ProgressBar.value = LoadingValue
+	$CanvasLayer/Control/VBoxContainer/ProgressBar.value = LoadingValue
 	pass
 
 func ShowLevel():
@@ -117,7 +120,7 @@ func _on_ButtonD_pressed():
 func _notification(what):
 	# https://docs.godotengine.org/en/3.1/tutorials/misc/handling_quit_requests.html
 	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
-		$Control/QuitConfirmationDialog.popup()
+		$CanvasLayer/Control/QuitConfirmationDialog.popup()
 		pass
 	pass
 	
@@ -128,5 +131,5 @@ func _on_ConfirmationDialog_confirmed():
 
 
 func _on_QUITButton_pressed():
-	$Control/QuitConfirmationDialog.popup()
+	$CanvasLayer/Control/QuitConfirmationDialog.popup()
 	pass # Replace with function body.
