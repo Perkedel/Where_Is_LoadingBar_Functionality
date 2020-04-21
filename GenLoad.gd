@@ -30,7 +30,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if queue.is_ready("res://manies.tscn"):
+	if queue.is_ready(loadThisNamePls):
 		ReadyToShow = true
 		LoadingValue = queue.get_progress(loadThisNamePls) * 100
 		# It will no longer ready when the resource gets instanced!
@@ -131,7 +131,6 @@ func _notification(what):
 	
 
 func _on_ConfirmationDialog_confirmed():
-	get_tree().free()
 	get_tree().quit()
 	pass # Replace with function body.
 
