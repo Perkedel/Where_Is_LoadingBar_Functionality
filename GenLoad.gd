@@ -9,6 +9,8 @@ extends Node
 # https://godotengine.org/qa/41325/how-to-create-a-loading-screen
 # https://godotengine.org/qa/30565/a-loading-bar-demo
 
+# GLES2 if you wish it compatible for HTML5 unfortunately.
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
