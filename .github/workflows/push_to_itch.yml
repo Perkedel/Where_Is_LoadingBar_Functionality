@@ -37,6 +37,6 @@ jobs:
         env:
           CHANNEL: ${{ matrix.platform }}
           ITCH_GAME: loading-bar-functionality
-          ITCH_USER: JOELwindows7
+          ITCH_USER: joelwindows7
           PACKAGE: ${{ github.workspace }}/${{ steps.godot_build.outputs.build }}
           BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
