@@ -28,9 +28,10 @@ jobs:
         uses: josephbmanley/build-godot-action@v1.4.0
         id: godot_build
         with:
-          name: loading-bar-functionality_GitHub-Action${{ env.EXPORT_SUFFIX }}
+          name: loading-bar-functionality_${{ matrix.platform }}_GitHub-Action${{ env.EXPORT_SUFFIX }}
           preset: ${{ matrix.platform }}
-          projectDir: . # We settled git from root
+          projectDir: . 
+          # We settled git from root
           debugMode: 'true'
       - name: Push to Itch
         uses: josephbmanley/butler-publish-itchio-action@v1.0.1
