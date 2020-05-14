@@ -29,7 +29,7 @@ jobs:
         with:
           name: loading-bar-functionality_GitHub-Action${{ env.EXPORT_SUFFIX }}
           preset: ${{ matrix.platform }}
-          projectDir: Where_Is_LoadingBar_Functionality
+          projectDir: . # We settled git from root
           debugMode: 'true'
       - name: Push to Itch
         uses: josephbmanley/butler-publish-itchio-action@v1.0.1
