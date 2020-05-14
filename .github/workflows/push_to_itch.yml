@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        platform: [linux, win32, win64, osx]
+        platform: [linux, win64, osx]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -29,7 +29,7 @@ jobs:
         with:
           name: loading-bar-functionality_GitHub-Action${{ env.EXPORT_SUFFIX }}
           preset: ${{ matrix.platform }}
-          projectDir: client
+          projectDir: Where_Is_LoadingBar_Functionality
           debugMode: 'true'
       - name: Push to Itch
         uses: josephbmanley/butler-publish-itchio-action@v1.0.1
