@@ -22,6 +22,7 @@ export var ReadyToShow = false
 export(String) var loadThisNamePls = "res://Fews.tscn"
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	queue.start()
 	#queue.queue_resource("res://manies.tscn",true)
 	# Step
@@ -134,7 +135,11 @@ func _notification(what):
 	
 
 func _on_ConfirmationDialog_confirmed():
-	get_tree().quit()
+	if get_parent().has_method("QuitNauYo"):
+		get_parent().QuitNauYo()
+		pass
+	else:
+		get_tree().quit()
 	pass # Replace with function body.
 
 
