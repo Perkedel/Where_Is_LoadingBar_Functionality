@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Where_Is_LoadingBar_Functionality"
-run/main_scene="res://GenLoad.tscn"
+run/main_scene="res://GameDVDCardtridge/WhereIsLoadingBarFunctions/Scenes/GenLoad.tscn"
 config/icon="res://icon.png"
 config/auto_accept_quit=false
 
@@ -31,7 +31,7 @@ window/stretch/aspect="expand"
 [gui]
 
 theme/use_hidpi=true
-theme/custom="res://Themes/Brand_new.tres"
+theme/custom="res://GameDVDCardtridge/WhereIsLoadingBarFunctions/Themes/Brand_new.tres"
 
 [physics]
 

@@ -1,8 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://copsol.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Bolla.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Cilindrical.tscn" type="PackedScene" id=3]
+[ext_resource path="res://GameDVDCardtridge/WhereIsLoadingBarFunctions/Scenes/copsol.tscn" type="PackedScene" id=1]
+[ext_resource path="res://GameDVDCardtridge/WhereIsLoadingBarFunctions/Scenes/Bolla.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GameDVDCardtridge/WhereIsLoadingBarFunctions/Scenes/Cilindrical.tscn" type="PackedScene" id=3]
+
 
 [node name="Fews" type="Spatial"]
 

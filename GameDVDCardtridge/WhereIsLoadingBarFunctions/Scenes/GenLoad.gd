@@ -15,14 +15,22 @@ extends Node
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
+signal ReallyQuit()
+
 onready var queue = preload("res://Scripts/resource_queue.gd").new()
 var LoadSet
 export var LoadingValue = 0 
 export var ReadyToShow = false
-export(String) var loadThisNamePls = "res://Fews.tscn"
+export var IReallyWantToQuit = false
+export(String) var loadThisNamePls = "res://GameDVDCardtridge/WhereIsLoadingBarFunctions/Scenes/Fews.tscn"
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
+	if get_parent().has_method("QuitNauYo"):
+		$CanvasLayer/Control/QuitConfirmationDialog.dialog_text = "Are you sure to Change DVD?"
+		pass
+	else:
+		$CanvasLayer/Control/QuitConfirmationDialog.dialog_text = "Are you sure to quit?"
+		pass
 	queue.start()
 	#queue.queue_resource("res://manies.tscn",true)
 	# Step
@@ -129,7 +137,11 @@ func _on_ButtonD_pressed():
 func _notification(what):
 	# https://docs.godotengine.org/en/3.1/tutorials/misc/handling_quit_requests.html
 	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
+		if get_parent().has_method("QuitNauYo"):
+			$CanvasLayer/Control/QuitConfirmationDialog.dialog_text = "Are you sure to shutdown Hexagon Engine?"
+			pass
 		$CanvasLayer/Control/QuitConfirmationDialog.popup()
+		IReallyWantToQuit = true
 		pass
 	pass
 	
@@ -138,6 +150,9 @@ func _on_ConfirmationDialog_confirmed():
 	if get_parent().has_method("QuitNauYo"):
 		get_parent().QuitNauYo()
 		pass
+	elif IReallyWantToQuit:
+		#get_tree().quit()
+		emit_signal("ReallyQuit")
 	else:
 		get_tree().quit()
 	pass # Replace with function body.
@@ -150,4 +165,14 @@ func _on_QUITButton_pressed():
 
 func _on_ButtonD2_pressed():
 	DeleteSpawns()
+	pass # Replace with function body.
+
+
+func _on_QuitConfirmationDialog_popup_hide():
+	IReallyWantToQuit = false
+	if get_parent().has_method("QuitNauYo"):
+		$CanvasLayer/Control/QuitConfirmationDialog.dialog_text = "Are you sure to Change DVD?"
+		pass
+	else:
+		$CanvasLayer/Control/QuitConfirmationDialog.dialog_text = "Are you sure to quit?"
 	pass # Replace with function body.
