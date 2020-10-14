@@ -74,4 +74,4 @@ jobs:
               ./godot --export-pack linux project.godot "Harumi/loading-bar_Circle-CI.pck"
       - run:
           name: Upload Hexagon Engine Mod PCK file build
-          command: if [[ $(git log -1 --oneline) == *"[RELEASE]"* ]]; then ./butler push mod joelwindows7/loading-bar-functionality:Harumi-circleci; fi
+          command: if [[ $(git log -1 --oneline) == *"[RELEASE]"* ]]; then ./butler push Harumi joelwindows7/loading-bar-functionality:Harumi-circleci; fi
