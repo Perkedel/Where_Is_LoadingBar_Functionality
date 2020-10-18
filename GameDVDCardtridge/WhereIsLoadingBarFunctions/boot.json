@@ -1,0 +1,12 @@
+{
+    "id": "loading-bar-functionality",
+    "Title": "Where is Loading Bar Functionality??",
+    "IconUrl": "res://icon.png",
+    "BootThisTscene": "res://GameDVDCardtridge/WhereIsLoadingBarFunctions/WhereIsLoadingFunctions.tscn",
+    "CatalogueBanner": "",
+    "DVDCover":"",
+    "isSelectable": true,
+    "hidden":false,
+    "actuallyBootJsonPath" : "",
+    "args":["",""]
+}
