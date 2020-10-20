@@ -4,9 +4,10 @@
 [ext_resource path="res://GameDVDCardtridge/WhereIsLoadingBarFunctions/Scenes/GenLoad.gd" type="Script" id=2]
 
 [sub_resource type="PlaneMesh" id=1]
+size = Vector2( 10, 10 )
 
 [sub_resource type="BoxShape" id=2]
-extents = Vector3( 9.16815, 0.184204, 8.93748 )
+extents = Vector3( 20, 0.184204, 20 )
 
 [node name="GenLoad" type="Node"]
 script = ExtResource( 2 )
