@@ -12,6 +12,25 @@ extends Node
 # GLES2 if you wish it compatible for HTML5 unfortunately.
 # enable ETC VRAM compression in Project setting, rendering, vram comrpession.
 
+# a plugin just to do that now here https://github.com/NovemberDev/GodotAsyncSceneLoader
+# This plugin adds SceneLoader Singleton. you just have to tell it to load this scene and then spawn the loaded resource from it to your node yay!
+# it does that by sending a signal with a Dictionary containing, the path of your scene, loaded resource, INCLUDING THE INSTANCE TOO, and some props variable when you pass it this to the loader. usefull for special level parameter wow!
+# it's there on Godot AssetLib too! it's `Scene Loader` `Asynchronous Scene Loader` something!
+
+# Error on HTML5 if you redownload and run index.html
+# this is due to security measure on some browser that disallow fetching external resource from URL that isn't HTTP or HTTPS.
+# https://stackoverflow.com/questions/58128248/how-can-i-resolve-the-error-url-scheme-must-be-http-or-https-for-cors-reque
+# https://stackoverflow.com/questions/58128248/how-can-i-resolve-the-error-url-scheme-must-be-http-or-https-for-cors-reque
+# https://stackoverflow.com/questions/49971575/chrome-fetch-api-cannot-load-file-how-to-workaround/59925724#59925724
+# https://godotforums.org/discussion/25208/failed-loading-index-pck-file
+# https://docs.godotengine.org/en/latest/development/compiling/compiling_for_web.html
+# use Live Server extension of VS code. https://github.com/ritwickdey/vscode-live-server
+# open the folder containing index.html along with other files with VScode and then while in that tab, press that Go Live in bottom right
+# now this will run mini server at designated port, broadcasting that index.html yay. and it works!
+# after done, turn off mini server by click No symbol with Port number at bottom right.
+
+# font used is Ubuntu & Twenty Four 16 segment display font yay! https://scruss.com/blog/2016/05/21/twentyfoursixteen-a-17-segment-alpha-lcd-font/
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"

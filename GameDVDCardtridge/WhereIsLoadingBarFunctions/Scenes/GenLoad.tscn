@@ -218,6 +218,7 @@ dialog_text = "Are You sure to quit?"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Empty/QUITButton" to="." method="_on_QUITButton_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/CenterContainer/HBoxContainer/ButtonA" to="." method="_on_ButtonA_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/CenterContainer/HBoxContainer/ButtonB" to="." method="_on_ButtonB_pressed"]

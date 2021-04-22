@@ -10,14 +10,17 @@ config_version=4
 
 _global_script_classes=[  ]
 _global_script_class_icons={
-
 }
 
 [application]
 
 config/name="Where_Is_LoadingBar_Functionality"
+config/description="I just wanted to have working loading functionality just like Brackey's Unity Level loading. where?"
 run/main_scene="res://GameDVDCardtridge/WhereIsLoadingBarFunctions/Scenes/GenLoad.tscn"
-config/icon="res://icon.png"
+boot_splash/image="res://GameDVDCardtridge/WhereIsLoadingBarFunctions/sprites/splash_loading_functionality.png"
+boot_splash/bg_color=Color( 0.14902, 0.192157, 0.12549, 1 )
+config/icon="res://GameDVDCardtridge/WhereIsLoadingBarFunctions/sprites/icon_loading-functionality.png"
+config/windows_native_icon="res://GameDVDCardtridge/WhereIsLoadingBarFunctions/sprites/icon_loading-functionality.ico"
 config/auto_accept_quit=false
 
 [display]
@@ -32,6 +35,10 @@ window/stretch/aspect="expand"
 
 theme/use_hidpi=true
 theme/custom="res://GameDVDCardtridge/WhereIsLoadingBarFunctions/Themes/Brand_new.tres"
+
+[memory]
+
+limits/multithreaded_server/rid_pool_prealloc=70
 
 [physics]
 
