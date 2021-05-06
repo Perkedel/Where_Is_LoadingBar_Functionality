@@ -26,7 +26,7 @@ func queue_resource(path, p_in_front = false):
 		_unlock("queue_resource")
 		return
 
-	elif ResourceLoader.has(path):
+	elif ResourceLoader.has_cached(path): # previously .has(path)
 		var res = ResourceLoader.load(path)
 		pending[path] = res
 		_unlock("queue_resource")
