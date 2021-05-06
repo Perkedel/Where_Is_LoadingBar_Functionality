@@ -11,4 +11,6 @@ The threaded loading way is exist in Godot. check this code out
 
 # Links
 - [https://joelwindows7.itch.io/loading-bar-functionality](https://joelwindows7.itch.io/loading-bar-functionality ) Play now on ITCH
+- [https://gotm.io/perkedel/loadingbar](https://gotm.io/perkedel/loadingbar ) Play now on gotm.io
 - [https://github.com/Perkedel/Where_Is_LoadingBar_Functionality](https://github.com/Perkedel/Where_Is_LoadingBar_Functionality ) Source
+- 
