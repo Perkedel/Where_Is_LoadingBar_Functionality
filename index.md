@@ -1,3 +1,5 @@
+<iframe frameborder="0" src="https://itch.io/embed-upload/2163827?color=000000" allowfullscreen="" width="1270" height="740"><a href="https://joelwindows7.itch.io/loading-bar-functionality">Play Loading Bar Functionality on itch.io</a></iframe>
+
 # Where is Loading Bar functionality?
 I want to have Loading bar in Godot. where?
 
